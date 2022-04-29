@@ -17,7 +17,7 @@ async function getDownloads(packageName: string, periode: string): Promise<numbe
 		if (npmDownloads.package === packageName && npmDownloads.downloads > -1) {
 			return npmDownloads.downloads;
 		}
-		throw `Invalid reponse from npm-stat.com ${packageName}.`;
+		throw `Invalid reponse frpm-stat.com ${packageName}.`;
 	} catch (err: any) {
 		if (err?.response?.status === 404) {
 			return 0; //return 0 for packages that were just added and don't have downloads yet

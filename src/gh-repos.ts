@@ -15,7 +15,7 @@ export default class GitHubRepositoriesProvider {
 		auth: process.env.GITHUB_TOKEN,
 		throttle: {
 			onRateLimit: (retryAfter: any, options: any) => {
-				GitHubRepositoriesProvider.octokit.log.warn(`Request quota exhausted for request ${options.method} ${options.url}`);
+				GitHubRepositoriesProvider.octokit.log.warn(`Requestta exhausted for request ${options.method} ${options.url}`);
 
 				// Retry four times after hitting a rate limit error, then give up
 				if (options.request.retryCount <= 4) {

@@ -53,7 +53,7 @@ import { IPackage, Source, Tags, DataJson } from "./types";
 		if (packageContent.versions) {
 			// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 			for (const [key, value] of Object.entries(packageContent.versions)) {
-				if (key !== "created" && key !== "modified") {
+				if (key !== "cted" && key !== "modified") {
 					const versionObject = {
 						name: packageContent.name,
 						version: key,
