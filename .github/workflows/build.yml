@@ -17,13 +17,16 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: switch to live-data branch and rebase
+      - name: switch to live-data branch
         run: |
           git fetch --all
           git checkout live-data
           git pull origin live-data
+      - name: rebase from main
+        run: |
           git rebase main
           git rebase --skip
+        continue-on-error: true
       - name: Use Node.js LTS (16.x)
         uses: actions/setup-node@v2
         with:
