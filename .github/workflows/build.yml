@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
       - name: switch to live-data branch and rebase
         run: |
-          git fetch -all
+          git fetch --all
           git checkout live-data
           git pull origin live-data
           git rebase main
