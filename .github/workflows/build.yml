@@ -15,10 +15,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          ref: live-data
       - name: switch to live-data branch and rebase
         run: |
           git fetch
-          git checkout live-data
           git rebase main
           git rebase --skip
       - name: Use Node.js LTS (16.x)
