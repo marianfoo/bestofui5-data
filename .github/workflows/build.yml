@@ -23,20 +23,14 @@ jobs:
           git config --global user.email '13335743+marianfoo@users.noreply.github.com'
           git fetch --all
           git checkout live-data
-          touch data/data.json
-          touch data/versions.json
-          touch data/clones.json
-          touch data/contributors.json
-          git add .
-          git commit -m "chore: add files"
           git checkout main
       - name: get data from live-data
         run: |
-
           git show live-data:data/data.json > data/data.json  
           git show live-data:data/versions.json > data/versions.json  
           git show live-data:data/clones.json > data/clones.json  
           git show live-data:data/contributors.json > data/contributors.json
+        continue-on-error: true
       - name: Use Node.js LTS (16.x)
         uses: actions/setup-node@v2
         with:
