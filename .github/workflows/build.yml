@@ -26,6 +26,10 @@ jobs:
           git checkout main
       - name: get data from live-data
         run: |
+          touch data/data.json
+          touch data/versions.json
+          touch data/clones.json
+          touch data/contributors.json
           git show live-data:data/data.json > data/data.json  
           git show live-data:data/versions.json > data/versions.json  
           git show live-data:data/clones.json > data/clones.json  
