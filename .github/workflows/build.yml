@@ -27,6 +27,7 @@ jobs:
           touch data/versions.json
           touch data/clones.json
           touch data/contributors.json
+          git commit -m "chore: add files"
           git checkout main
       - name: get data from live-data
         run: |
